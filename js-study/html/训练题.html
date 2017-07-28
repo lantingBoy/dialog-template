@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*判断是否为数组*/
+			var a = [1, 2, '22']
+			function isArray (arr) {
+			    // return (a instanceof(Array))
+			    return Object.prototype.toString.call(arr) === '[object Array]'
+			}
+  			console.log(isArray(a))
+		</script>
+	</body>
+</html>

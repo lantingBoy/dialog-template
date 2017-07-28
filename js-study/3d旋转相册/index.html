@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            width:100%;
+            height:100%;
+            background:#000;
+        }
+        .box{
+            width:300px;
+            height:300px;
+            margin:180px auto;
+
+            transform-style:preserve-3d;
+            animation:rotate 20s infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes rotate {
+            from{
+                transform:rotateX(0deg) rotateY(0deg);
+            }
+            to{
+                transform:rotateX(360deg) rotate(360deg)
+            }
+        }
+    /*    @keyframes rotate-frame {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    10% {
+        transform: rotateX(0deg) rotateY(180deg);
+    }
+    20% {
+        transform: rotateX(-180deg) rotateY(180deg);
+    }
+    30% {
+        transform: rotateX(-360deg) rotateY(180deg);
+    }
+    40% {
+        transform: rotateX(-360deg) rotateY(360deg);
+    }
+    50% {
+        transform: rotateX(-180deg) rotateY(360deg);
+    }
+    60% {
+        transform: rotateX(90deg) rotateY(180deg);
+    }
+    70% {
+        transform: rotateX(0) rotateY(180deg);
+    }
+    80% {
+        transform: rotateX(90deg) rotateY(90deg);
+    }
+    90% {
+        transform: rotateX(90deg) rotateY(0);
+    }
+    100% {
+        transform: rotateX(0) rotateY(0);
+    }
+}
+   */     .box div{
+            position: absolute;
+            transition: all 0.8s 0.2s;
+            /*加一个过渡效果*/
+        }
+
+        .out-pic{
+            width:300px;
+            height:300px;
+            opacity:0.9;
+        }
+        .in-pic{
+            width:150px;
+            height:150px;
+
+        }
+        span{
+            display: block;
+            width:150px;
+            height:150px;
+            position: absolute;
+            top:75px;
+            left:75px;
+        }
+
+        /*先生成一个外围大的正方体*/
+        .out-front{
+            transform:translateZ(150px);
+        }
+        .out-back{
+            transform:translateZ(-150px);
+        }
+        .out-left{
+            transform:rotateY(90deg) translateZ(150px);
+        }
+        .out-right{
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+        .out-up{
+            transform:rotateX(90deg) translateZ(150px);
+        }
+        .out-down{
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+        /*再生成一个小的正方体*/
+        .in-front{
+            transform:translateZ(75px);
+        }
+        .in-back{
+            transform:translateZ(-75px);
+        }
+        .in-left{
+            transform:rotateY(90deg) translateZ(75px);
+        }
+        .in-right{
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+        .in-up{
+            transform:rotateX(90deg) translateZ(75px);
+        }
+        .in-down{
+            transform: rotateX(-90deg) translateZ(75px);
+        }
+        /*box划过的时候让大的正方体距离z轴的距离变大*/
+        .box:hover .out-front{
+            transform:translateZ(270px);
+        }
+        .box:hover .out-back{
+            transform:translateZ(-270px);
+        }
+        .box:hover .out-left{
+            transform:rotateY(90deg) translateZ(270px);
+        }
+        .box:hover .out-right{
+            transform: rotateY(-90deg) translateZ(270px);
+        }
+        .box:hover .out-up{
+            transform:rotateX(90deg) translateZ(270px);
+        }
+        .box:hover .out-down{
+            transform: rotateX(-90deg) translateZ(270px);
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="out-front">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/13.jpg" class="out-pic">
+    </div>
+    <div class="out-back">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/14.jpg" class="out-pic">
+    </div>
+    <div class="out-up">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/15.jpg" class="out-pic">
+    </div>
+    <div class="out-down">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/16.jpg" class="out-pic">
+    </div>
+    <div class="out-left">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/17.jpg" class="out-pic">
+    </div>
+    <div class="out-right">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/18.jpg" class="out-pic">
+    </div>
+    <span class="in-front">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/13.jpg" class="in-pic">
+    </span>
+    <span class="in-back">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/14.jpg" class="in-pic">
+    </span>
+    <span class="in-up">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/15.jpg" class="in-pic">
+    </span>
+    <span class="in-down">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/16.jpg" class="in-pic">
+    </span>
+    <span class="in-left">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/17.jpg" class="in-pic">
+    </span>
+    <span class="in-right">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/duodianqudao/img/18.jpg" class="in-pic">
+    </span>
+</div>
+</body>
+</html>

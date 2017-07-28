@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#container{overflow:hidden;border-radius:8px;box-shadow:2px 2px 2px 0 #ccc;position:relative;margin:auto;width:800px;height:350px;border:palevioletred solid 1px;}
+			#container > img {width:800px;height:350px;position:absolute;left:800px;}
+			#container > img.first{left:0}
+			.next,.prev{width:50px;height:80px;background-color:chocolate;
+				position:absolute;font-size:52px;text-align: center;
+				line-height: 80px;top:86px;display:none;}
+			.next{right:0;}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img class="first" src="img/1.jpg" />
+			<img src="img/2.jpg" />
+			<img src="img/3.jpg" />
+			<img src="img/4.jpg" />
+			<img src="img/5.jpg" />
+			<img src="img/6.jpg" />
+			<p class="prev">&lt;</p>
+			<p class="next">&gt;</p>
+		</div>
+		<script src="js/jquery-1.12.4.min.js"></script>
+		<script>
+			var $index=0,
+				$nextIndex=1,
+				$img=$('img');
+			// 先让图片动起来 从右向左
+			function rightMove(){
+				$img.eq($index).animate({left:'800'},500);
+				console.log($img.eq().index());
+				$img.eq($nextIndex).css({left:-800}).animate({left:0},500);
+			};
+			//rightMove();
+			function leftMove(){
+				$img.eq($index).animate({left:-800},500);
+				$img .eq($nextIndex).css({left:800}).animate({left:0},500)
+			}
+			//leftMove();
+			//添加控制的左右轮播
+			function play(){
+				if($index==$img.length-1&&$nextIndex==0){
+					rightMove();
+				}else if($nextIndex>$index){
+					rightMove();
+				}
+			}
+			function autoPlay(){
+				$auto=setInterval(function(){
+					$nextIndex=$index+1;
+					if($nextIndex>=$img.length){
+						$nextIndex=0;
+					}
+					play();
+					$index=$nextIndex;
+				},1000)
+			}
+			autoPlay();
+		</script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//继承
+			　function Animal(){
+　　　　this.species = "动物";
+　　}
+			　function Cat(name,color){
+　　　　this.name = name;
+　　　　this.color = color;
+　　}
+			//第一种使用call，applay 实现继承
+			/*function Cat(){
+				this.color='red';
+				Animal.apply(this,arguments)
+			}
+			var cat1=new Cat();
+			console.log(cat1.speics);*/
+			
+			//第二种实现
+			//每一个构造函数都有一个prototype属性这个属性是一个指针指向一个对象，而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法
+			/*function Cat(color,name){         //构造函数
+				this.color=color;
+				this.name=name;
+			}
+			Cat.prototype=new Animal();      //构造函数的原型指向  一个Animal的实例
+			//Cat.prototype.constructor=Cat;
+			var cat2 =new Cat();
+			console.log(cat2.speics);
+			alert(Cat.prototype.constructor == Animal); //true  任何一个prototype都有一个constructor 指向他的构造函数*/
+			//第三种实现
+			//直接通过原型
+			/*function Animal(){
+				
+			}
+			Animal.prototype.speices="动物"
+			function Cat(name,color){
+				this.color=color;
+				this.name=name;
+			}
+			Cat.prototype=Animal.prototype;
+			var cat3=new Cat();
+			alert(cat3.speices);*/
+			//通过一个空对象实现继承
+			/*var f= function(){};
+			f.prototype= Animal.prototype;
+			Cat.prototype=new f();*/
+			//封装一下
+			function extend(Child, Parent) {
+
+　　　　var F = function(){};
+　　　　F.prototype = Parent.prototype;
+　　　　Child.prototype = new F();
+　　　　Child.prototype.constructor = Child;
+　　　　Child.uber = Parent.prototype;
+　　}
+			extend(Cat,Animal);
+　　var cat1 = new Cat("大毛","黄色");
+　　alert(cat1.species); // 动物
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="轮播/js/jquery-1.12.4.min.js"></script>
+	</head>
+	<body>
+		<div class="btn" data-control="prve"> 上一张</div>
+		<div class="btn" data-control="next"> 下一张</div>
+		<script>
+			$('.btn').on('click',function(){
+				if($(this).data('control')==='prve'){
+					alert('上一张');
+				}else{
+					alert('下一张')
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="人人爱家金融">
+    <meta name="description" content="人人爱家-加薪日">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>人人爱家金融-七月加薪，红包领不停</title>
+    <style>
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        input{
+            -webkit-appearance: none;
+        }
+        *{padding: 0;margin: 0;font-family: '苹方','Microsoft YaHei', arial, helvetica, sans-serif;animation: loadpage 1s; -webkit-animation: loadPage 1s; opacity:1 }
+        a{
+            text-decoration: none;
+        }
+        html{font-size:87.5%; line-height: 1.5;   }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+        body{ background-color: #fffcf7;color: #fff; padding-bottom: 5rem; z-index: 1;}
+        .block p{ margin-top: .25rem}
+        .box{position: relative;width: 100%; overflow: hidden}
+        .box img{ display: block;}
+        .text-add a{ color: white; text-decoration: none}
+        .clearfix:after{content: '';display: block; height: 0;width: 0;overflow: hidden; clear: both}
+        /*****/
+        .footer{font-size: .875rem; line-height: 1.5; text-align: center;padding-bottom: .5rem;color: #a68862;
+
+        }
+        .copyright{ background-color: #dfd0aa;  padding:.5rem 0 }
+        .copyright img{ max-width: 12rem; display: block; margin: 0 auto}
+        .my-jdk {
+            text-align: right;
+            margin-top:0.5rem;
+        }
+        .my-jdk a{
+            color: #f25955;
+            margin-right: 2rem;
+            text-decoration: underline;
+            font-family: "PingFang SC Regular";
+            font-size:0.9rem;
+        }
+        .margin-t{
+            margin-top:1.5rem;
+        }
+
+        .bg {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+            z-index: 20;
+           display: none;
+        }
+
+
+        .jd-dialog{
+        	
+            width:20rem;
+            position:fixed;
+            left:50%;
+            margin-left: -11rem;
+            top:10rem;
+            padding: 1rem 1rem;
+            z-index:21;
+           background: #fff;
+            text-align: center;
+            color: #696969;
+            font-size:0.825rem;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            display: none;
+           
+        }
+        .dialog-title{
+            font-size:1.2rem;
+        }
+        .tab-wrap{
+        	min-height:5rem;
+        	max-height:20rem;
+			 overflow: auto;
+        	
+        	text-align: center;
+        }
+        .table{
+            text-align: center;
+            collapse: 0;
+            margin: 0.5rem auto;
+        	
+        }
+        .table td{
+           height: 2rem;
+           line-height: 2rem;
+            background: #fffcf7;
+            width: 8.5rem;
+          
+        }
+        .table th{
+            text-align: center;
+            background: #f2e9c8;
+            color: #696969;
+            font-family: "PingFang SC Regular";
+            font-weight: normal!important;
+            
+        }
+        .red{
+            color: #f06e73;
+        }
+        .quxiao{
+            width:2rem;
+            height:2rem;
+            position: absolute;
+            right:-0.5rem;
+            top:-0.5rem;
+            z-index:25;
+
+        }
+        .jd-right{
+            width:1rem;
+            height:1rem;
+            position: absolute;
+            right:-0.1rem;
+            top:-0.1rem;
+            background: #fff;
+        }
+        /*按钮*/
+        .control-bottom{position: fixed;bottom: 0;width: 90%;z-index: 5; padding: 1rem 5%; background-color: white;left: 0; border-top:1px solid #ddd;transform: translateY(5.5em);-webkit-transform: translateY(5.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom.active{opacity: .9; transform: translateY(0);-webkit-transform: translateY(0);}
+        .btn-bank{ display: block; border-radius: .35rem;text-align: center; text-decoration: none; padding: .725rem 0;width: 90%; border-radius: 999px; background-color: #d3bd8c; color: white; margin: 0 auto; font-size: 1.25rem;  border-bottom:.25rem solid #a99056; }
+        .btn-bank.disable{background-color: #d3bd8c; color: #666;border-bottom: 1px solid #ccc;}
+
+        .place p:nth-child(1){
+            color: #dc3443;
+            font-size: 1.8rem;
+            font-family: "PingFang SC Regular";
+        }
+        .place p:nth-child(2){
+            color: #6b6b6b;
+            font-size: 0.9rem;
+            font-family: "PingFang SC Regular";
+        }
+        .place p:nth-child(3){
+            color: #6b6b6b;
+            font-size: 0.9rem;
+            font-family: "PingFang SC Regular";
+        }
+		.scrol{
+			overflow-y: hidden;
+		}
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_02.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_03.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_04.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_05.png" width="100%">
+
+</div>
+<div class="box">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/JD_02.png" width="100%">
+
+</div>
+
+<div class="box">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_07.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_08.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_09.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_10.png" width="100%">
+</div>
+<div class="my-jdk">
+    <a href="#" >我的奖励：800元京东卡＞</a>
+</div>
+<div class="box margin-t">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_12.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_13.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_14.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/jdk_15.png" width="100%">
+</div>
+<!--foot--->
+<div class="footer">
+    <p><br>客服热线：400-667-0571</p>
+    <p>本活动最终解释权归人人爱家金融所有<br><br></p>
+    <p class="copyright">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/pageV3/newUser/poster_logo.png" width="30%">
+    </p>
+</div>
+<div class="bg"></div>
+<!--弹框-->
+
+
+    <div class="jd-dialog">
+        <div class="jd-right"></div>
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/qiyueJDK/quxiao.png" class="quxiao">
+        <div class="dialog-title">-我的奖励-</div>
+        <div class="tab-wrap">
+        	
+      
+        <table class="table">
+            <th>
+                投资项目(单笔)
+            </th>
+            <th>
+                奖励
+            </th>
+            <tr>
+                <td>稳赚一月</td>
+                <td class="red">100元京东卡</td>
+            </tr>
+           
+        </table>
+          </div>
+    </div>
+
+
+<!--按钮-->
+<div class="control-bottom">
+    <a href="" class="btn-bank">立即投资</a>
+</div>
+<script src="http://cdn.renrenaijia.com/CDN/lib/zepto/zepto.touch.min.js"></script>
+<script>
+    $(function(){
+    	var preventDefault=function(e){
+    		e.preventDefault();
+    	}
+        $('.my-jdk').on('tap',function(){        	
+        	$('.bg').show();
+        	$('.jd-dialog').show();
+			
+			//document.getElementsByClassName('tab-wrap').removeEventListener('touchment',preventDefault,false);
+        });
+        $('.quxiao').on('tap',function(){
+            $('.bg').hide();
+        	$('.jd-dialog').hide();
+        	
+        })
+    })
+      var scrollEvent = self.setInterval(function(){
+        if( document.body.scrollTop>450){
+            document.querySelector('.control-bottom').className='control-bottom active';
+        }else{
+            document.querySelector('.control-bottom').className='control-bottom';
+        }
+    },100);//
+</script>
+</body>
+</html>

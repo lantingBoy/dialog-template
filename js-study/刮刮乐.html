@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="人人爱家金融">
+    <meta name="description" content="人人爱家-爱家会员日">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <title>人人爱家金融-爱家会员日，积分兑换5折起</title>
+    <style>
+        @keyframes loadPage {
+            from{ opacity: 0}
+        }
+        *{padding: 0;margin: 0;font-family: '苹方','Microsoft YaHei', arial, helvetica, sans-serif;animation: loadpage 1s; -webkit-animation: loadPage 1s; opacity:1 }
+        html{font-size:87.5%; line-height: 1.5;   }
+        @media screen and (max-width: 340px) {
+            html{font-size:75%;  }
+        }
+        body{ background-color: #faf6f3;color: #fff; padding-bottom: 5rem;position: relative; }
+        .block p{ margin-top: .25rem}
+        .box{position: relative;width: 100%; overflow: hidden}
+        .box img{ display: block;}
+        .text-add a{ color: white; text-decoration: none}
+        /**底部***/
+        .footer{font-size: .875rem; line-height: 1.5; text-align: center;padding-bottom: .5rem;color: #c2a86b;margin-top:1.5rem;}
+        .copyright{ background-color: #dacdb5;  padding:.5rem 0 }
+        .copyright img{ max-width: 12rem; display: block; margin: 0 auto}
+        .my{
+            position: relative;
+            height: 2.6rem;
+        }
+        .my-jf{
+            text-align: center;
+            position: absolute;
+            width:16rem;
+            height:2rem;
+            left:50%;
+            margin-left:-8rem;
+            top:0;
+            z-index:11;
+            color:#473d2b;
+            font-size:1rem;
+            font-family: "苹方 细体";
+        }
+        .jf{
+            color: #dc5359;
+        }
+        .red{
+            color: #dc5359;
+        }
+        .bot-right a{
+            font-size:0.93rem;
+            color: #4c4d48;
+        }
+        .reward-img img{
+            width:9.4rem;
+            height:3.571rem;
+        }
+        .my-reward{
+            width:8.4rem;
+            height:3rem;
+            line-height: 3rem;
+            text-align: center;
+            color: #fff;
+            font-size:1.1rem;
+            position: absolute;
+            left:50%;
+            margin-left: -4.2rem;
+            top:50%;
+            margin-top:-1.5rem;
+        }
+        .reward-wrap{
+            width:100%;
+            height:42rem;
+            position: fixed;
+            top:50%;
+            margin-top:-14rem;
+            left:50%;
+            margin-left:-50%;
+            z-index:25;
+            display: none;
+        }
+        .reward-rule{
+            width:85%;
+            height: 24rem;
+            background: #fff;
+            margin:0 auto;
+            border-radius: 15px;
+            padding-top:1rem;
+        }
+        .reward-rule img{
+            margin: 0 auto;
+        }
+        .me-wrap{
+            width:100%;
+            height:10rem;
+            margin-top:3rem;
+        }
+        .me-reward{
+            margin: 0 auto;
+            width:85%;
+            height:10rem;
+            text-align: center;
+            background: #fff;
+        }
+        .text-top{
+            height: 2.6rem;
+            text-align: center;
+            line-height: 2.6rem;
+            font-size:1.285rem;
+            background: #cdbc9a;
+            margin-bottom: 1rem;
+            font-family:方正清刻本悦宋简体;
+        }
+        .me-reward p{
+            color: #6b6b6b;
+            font-size:1.07rem;
+        }
+        /*弹框*/
+        .dialog1{
+            width:22rem;
+            height:7rem;
+            background: #fff;
+            position: fixed;
+            left:50%;
+            top:50%;
+            margin-top:-5rem;
+            margin-left:-11rem;
+            -webkit-border-radius:15px;
+            -moz-border-radius:15px;
+            border-radius:15px;
+            text-align: center;
+            padding-top: 2rem;
+            z-index:25;
+            display: none;
+        }
+        .dialog1 .sure{
+            font-size:1rem;
+            color: #333;
+        }
+        .reward-mes{
+            display: none;
+        }
+        .dialog1 .select{
+            margin-top:1.8rem;
+        }
+        .dialog1 .select div{
+            display: inline-block;
+        }
+        .dialog1 p{
+            color: #333;
+            font-size:1rem;
+            margin-top:1.5rem;
+        }
+        .cancel{
+            color: #b42529;
+            width:6rem;
+            height:2rem;
+            line-height:2rem;
+            border: 1px solid #b42529;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            margin-right:0.5rem;
+        }
+        .ok{
+            color: #fff;
+            width:6rem;
+            height:2rem;
+            background: #dc5359;
+            line-height:2rem;
+            border: 1px solid #b42529;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            margin-left:0.5rem;
+        }
+        .words{
+            text-align: center;
+            font-family: "PingFang SC Regular";
+            font-size:1.2rem;
+            color: #a4a3a3;
+            line-height:4rem;
+            height:3rem;
+        }
+         /*按钮*/
+        .control-bottom{position: fixed;bottom: 0;width: 90%;z-index: 5; padding: 1rem 5%; background-color: white;left: 0; border-top:1px solid #ddd;transform: translateY(5.5em);-webkit-transform: translateY(5.5em);transition: all .25s;-webkit-transition: all .25s}
+        .control-bottom.active{opacity: .9; transform: translateY(0);-webkit-transform: translateY(0);}
+        .btn-bank{ display: block; border-radius: .35rem;text-align: center; text-decoration: none; padding: .725rem 0;width: 90%; border-radius: 999px; background-color: #e4bd84; color: white; margin: 0 auto; font-size: 1.25rem;  border-bottom:.25rem solid #d19c4f; }
+        .btn-bank.disable{background-color: #999; color: #666;border-bottom: 1px solid #ccc;}
+        /*======刮奖区====*/
+        .bg{
+            position: fixed;
+            top:0;
+            width: 100%;
+            height:100%;
+            background-color: rgba(0,0,0,.5);
+            display: none;
+            z-index:24;
+        }
+        .box-gj{
+            height:10rem;
+            width:22rem;
+            margin: 0 auto;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+        .content{
+            z-index: 10;
+            position: relative;
+            width:22rem;
+            height:10rem;
+            margin: 0 auto;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+        }
+        #mask_img_bg{
+            position: absolute;
+            width:22rem;
+            height:10rem;
+            left:50%;
+            margin-left:-11rem;
+            top: 0;
+            background:#8289bd;border-radius: 6px;
+            -webkit-border-radius: 6px;}
+
+        #redux{z-index: 22;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            width:22rem;
+            height:10rem;border-radius: 6px;
+            -webkit-border-radius: 6px;}
+
+        .my-reward{
+            width:10rem;
+            height:3rem;
+            line-height: 4rem;
+            text-align: center;
+            color: #fff;
+            font-size:1.3rem;
+            margin: 0 auto;
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            top: 50%;
+            margin-top:-1.5rem;
+        }
+        .bot-left,.bot-right{
+            color: #4c4d48;
+
+            display: inline-block;
+            font-size: 0.93rem;
+        }
+        .red{
+            color: #dc5359;
+        }
+        .bot-right a{
+
+            color: #4c4d48;
+        }
+        .bot {
+            width:22rem;
+            height:2rem;
+            margin: 1rem auto;
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+
+            color: #000000;
+        }
+
+        /*弹框*/
+        .cj-dialog{
+            width: 78%;
+            height:8rem;
+            margin: 0 auto;
+            background: #fff;
+            z-index:25;
+            position: fixed;
+            top: 10rem;
+            left:50%;
+            margin-left: -40%;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            padding-right:2%;
+            padding-top: 1rem;
+            line-height:4rem;
+            display: none;
+        }
+        .cj-size{
+            font-size:1.1rem;
+            text-align: center;
+            color:#473D2B;
+
+        }
+        .gb1{
+            position: absolute;
+            right:0;
+            top:0;
+            width:3rem;
+            height: 3rem;
+            opacity: 0;
+        }
+        .hd-time{
+            color:#000;
+            width: 22rem;
+            height:4rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index:10;
+            text-align: center;
+            padding-top:6rem;
+            color: #b5b5b5;
+            display: none;
+        }
+        .active{
+            display: none;
+        }
+        .cj-btn{
+            color:#fff;
+            background:#DC5359;
+            width:50%;
+            height:2rem;
+            line-height: 2.4rem;
+            text-align: center;
+            margin:0 auto;
+            border-radius:2.4rem;
+            -webkit-border-radius:2.4rem;
+            margin-top:0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_02.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_03.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_04.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_05.png" width="100%">
+</div>
+<div class="my">
+    <div class="my-jf">
+        我的可用积分：<span class="jf">300000积分</span>
+    </div>
+</div>
+<!-- 刮奖区-->
+<div class="box-gj">
+    <div class="content" style="position: relative;">
+        <div id="mask_img_bg">
+            <p class="my-reward">18888元体验金</p>
+        </div>
+        <img id="redux" src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7hy_03.png" />
+        <div class="hd-time active">（活动即将开始）</div>
+        <div class="hd-time">（快去兑换抽奖机会吧）</div>
+        <div class="hd-time">（您的刮奖次数已用完）</div>
+    </div>
+</div>
+<div class="bot">
+    <div class="bot-left">你还有<span class="red">1</span>次机会</div>
+    <div class="bot-right"><a href="#">兑换抽奖机会</a>＞</div>
+</div>
+<div class="cj-dialog">
+
+    <div class="gb1"></div>
+    <p class="cj-size">恭喜您获得<span class="red">18888元</span>体验金</p>
+    <div class="cj-btn">我知道了</div>
+</div>
+<div class="box">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_08.png" width="100%" class="rule-show">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_09.png" width="100%">
+    <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/7yuehuiyuan_10.png" width="100%">
+</div>
+<div class="me-wrap">
+    <div class="me-reward" >
+        <div class="text-top">-我的奖励-</div>
+        <div class="reward-mes">
+            <p>30元理财红包</p>
+            <p>2888元体验金</p>
+            <p>12元现金</p>
+        </div>
+        <div class="words">快去投资领取奖励吧！~</div>
+    </div>
+</div>
+<!--foot--->
+<div class="footer">
+    <p><br>客服热线：400-667-0571</p>
+    <p>本活动最终解释权归人人爱家金融所有<br><br></p>
+    <p class="copyright">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/pageV3/newUser/poster_logo.png" width="30%">
+    </p>
+</div>
+<!--规则-->
+<div class="reward-wrap">
+    <div class="reward-rule box">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/guize_08.png" width="95%" class="rule-hide">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/guize_11.png" width="95%">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/guize_12.png" width="95%">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/guize_13.png" width="95%">
+        <img src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/guize_14.png" width="95%">
+    </div>
+</div>
+<!--按钮-->
+<div class="control-bottom">
+    <a href="" class="btn-bank">立即投资</a>
+</div>
+<!--弹框-->
+<div class="dialog1" >
+    <div class="sure">用600积分兑换一次抽奖机会？</div>
+    <div class="select">
+        <div class="cancel">取消</div>
+        <div class="ok">确认</div>
+    </div>
+</div>
+<!--按钮-->
+<div class="control-bottom">
+    <a href="" class="btn-bank">立即投资</a>
+</div>
+<div class="bg"></div>
+<script src="http://cdn.renrenaijia.com/CDN/lib/zepto/zepto.touch.min.js"></script>
+<script src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="http://cdn.renrenaijia.com/CDN/app/Public/images/kmjrAppV3/page/7yuehuiyuan/js/jquery.eraser.js" ></script>
+<script>
+/*	var defaultParent=function(e){
+		e.preventDefault();
+	}
+	*/
+	$(window).load(function  () { //这个适用手机端，等图片加载完再显示，因为有可能会出现第一次加载图片没有加载完就不会出现canvas
+		$('#redux').eraser( {
+			size: 20,   //设置橡皮擦大小
+			completeRatio: .4, //设置擦除面积比例
+			completeFunction: showResetButton   //大于擦除面积比例触发函数
+		});
+		function showResetButton(){
+			$(".cj-dialog,.bg").fadeIn(300);
+			$('body').css({
+				"overflow-y":'hidden'
+			})
+		}
+		$(".cj-btn").on('tap',function  () {
+			$(".cj-dialog,.bg").fadeOut(300);
+			 window.location.reload();
+			 	$('body').css({
+				"overflow-y":'auto'
+			})
+		});
+
+	$('.reward-mid').on('tap',function(){
+            $('.reward-top').hide();
+            $('.reward-img').show();
+        })
+        $('.rule-show').on('tap',function(){
+            $('.bg').show();
+            $('.reward-wrap').show()
+        })
+        $('.rule-hide').on('tap',function(){
+            $('.bg').hide();
+            $('.reward-wrap').hide()
+        })
+        $('.bot-right').on('tap',function(){
+            $('.bg').show();
+            $('.dialog1').show();
+        })
+        $('.cancel').on('tap',function(){
+             $('.bg').hide();
+            $('.dialog1').hide();
+        })
+       
+	
+	 var scrollEvent = self.setInterval(function(){
+        if( document.body.scrollTop>450){
+            document.querySelector('.control-bottom').className='control-bottom active';
+        }else{
+            document.querySelector('.control-bottom').className='control-bottom';
+        }
+    },100);//
+	
+	
+	
+	
+	})
+	//
+
+        
+</script>
+<script>
+	 
+  
+</script>
+</body>
+</html>

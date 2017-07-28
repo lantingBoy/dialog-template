@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jq/jquery-1.12.4.min.js"></script>
+    <style>
+        #container{overflow:hidden;border-radius:8px;box-shadow:2px 2px 2px 0 #ccc;position:relative;margin:auto;width:800px;height:350px;border:palevioletred solid 1px;}
+        #container > img {width:800px;height:350px;position:absolute;left:800px;}
+        #container > img.first{left:0}
+        .next,.prev{width:50px;height:80px;background-color:chocolate;
+            position:absolute;font-size:52px;text-align: center;
+            line-height: 80px;top:86px;display:none;}
+        .next{right:0;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img class="first" src="img/1.jpg" />
+        <img src="img/2.jpg" />
+        <img src="img/3.jpg" />
+        <img src="img/4.jpg" />
+        <img src="img/5.jpg" />
+        <img src="img/6.jpg" />
+        <p class="prev">&lt;</p>
+        <p class="next">&gt;</p>
+    </div>
+    <script>
+        $(function () {
+            var $auto;
+            var $index=0;
+            var $nextIndex=1;
+            var $img=$('#container img');
+            //向右运动
+            function rightMove() {
+                $index++;
+                $nextIndex=$index+1;
+               $img.eq($index).animate({left:$img.width()}) ;
+                $img.eq($nextIndex).css('left',-$img.width()).animate({left:0});
+
+            //自动运行
+            function autoMove() {
+                $auto=setInterval(function () {
+                    rightMove()
+                },2000)
+            }
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+*{
+    margin:0;
+    padding:0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#box{
+    width:900px;
+    height:500px;
+    position: relative;
+    margin:50px auto 0;
+}
+#flash-list img{
+    width:900px;
+    height:500px;
+    vertical-align:bottom;
+    position: absolute;
+
+    display: none;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+#flash-list .active {
+    display: block;
+    opacity: 1;
+    filter: alpha(opacity=100);
+
+}
+#flash-btn img{
+    width:40px;
+    height:30px;
+    position: absolute;
+}
+#a1{
+    left:490px;
+    bottom:10px;
+}
+#a2{
+    left:542px;
+    bottom:10px;
+}
+#a3{
+    left:594px;
+    bottom:10px;
+}
+#a4{
+    left:646px;
+    bottom:10px;
+}
+#a5{
+    left:698px;
+    bottom:10px;
+}
+#a6{
+    left:750px;
+    bottom:10px;
+}
+
+#flash-btn .active{
+    width:40px;
+    height:30px;
+    border:3px solid #b30909;
+    border-radius:5px;
+}
+body{
+    background:#1a1b1f;
+}
+
+.firefly{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+#direction-btn {
+    display: none;
+}
+#direction-btn a{
+    position: absolute;
+    top: 50%;
+    margin-top: -31px;
+    width: 28px;
+    height: 62px;
+    text-align: center;
+    line-height: 62px;
+    color: #fff;
+    font-size: 24px;
+    background: rgba(0, 0, 0, .2);
+}
+#right-btn {
+    right: 0;
+}
